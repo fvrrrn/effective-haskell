@@ -1,4 +1,8 @@
-module MyLib (someFunc) where
+module MyLib (countNonPrintableCharacters) where
+import Data.Char
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+
+countNonPrintableCharacters :: String -> Int
+countNonPrintableCharacters =
+  length . filter (not . isPrint)
+

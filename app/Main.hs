@@ -1,8 +1,7 @@
 module Main where
+import qualified MyLib (countNonPrintableCharacters)
 
-import qualified MyLib (someFunc)
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  print (MyLib.countNonPrintableCharacters "\v\t\aHello\r\n")
