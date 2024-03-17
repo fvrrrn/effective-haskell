@@ -1,4 +1,4 @@
-cabal-version:      3.0
+cabal-version:      3.4
 -- The cabal-version field refers to the version of the .cabal specification,
 -- and can be different from the cabal-install (the tool) version and the
 -- Cabal (the library) version you are using. As such, the Cabal (the library)
@@ -23,13 +23,10 @@ name:               effective-haskell
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
-synopsis:           Rebecca Skinner's "Effective Haskell" through my eyes
+-- synopsis:
 
 -- A longer description of the package.
 -- description:
-
--- URL for the project homepage or repository.
-homepage:           https://github.com/fvrrrn/effective-haskell
 
 -- The license under which the package is released.
 license:            MIT
@@ -38,13 +35,14 @@ license:            MIT
 license-file:       LICENSE
 
 -- The package author(s).
-author:             fvrrrn
+author:             fvrn
 
 -- An email address to which users can send suggestions, bug reports, and patches.
 maintainer:         boris.chernystrand@gmail.com
 
 -- A copyright notice.
 -- copyright:
+category:           Development
 build-type:         Simple
 
 -- Extra doc files to be distributed with the package, such as a CHANGELOG or a README.
@@ -73,7 +71,31 @@ library
     build-depends:    base ^>=4.17.2.1
 
     -- Directories containing source files.
-    hs-source-dirs:   chapters
+    hs-source-dirs:   src
+
+    -- Base language which the package is written in.
+    default-language: GHC2021
+
+executable effective-haskell
+    -- Import common warning flags.
+    import:           warnings
+
+    -- .hs or .lhs file containing the Main module.
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- Other library packages from which modules are imported.
+    build-depends:
+        base ^>=4.17.2.1,
+        effective-haskell
+
+    -- Directories containing source files.
+    hs-source-dirs:   app
 
     -- Base language which the package is written in.
     default-language: GHC2021
