@@ -2,7 +2,39 @@
 
 -- during development use :load over import
 -- to have all declarations available
-module ModuleExamples.Module (testMessage) where
+module ModuleExamples.Module
+-- ( Name (Name),
+--   Salutation (Salutation),
+--   GreetingMessage (GreetingMessage),
+--   greetingSalutation,
+--   greetingTo,
+--   greetingFrom,
+--   defaultMessage,
+--   formatMessage,
+--   testMessage,
+-- )
+-- or like this:
+-- ( Name (Name, getName),
+--   Salutation (Salutation, getSalutation),
+--   GreetingMessage
+--     ( GreetingMessage,
+--       greetingSalutation,
+--       greetingTo,
+--       greetingFrom
+--     ),
+--   defaultMessage,
+--   formatMessage,
+--   testMessage,
+-- )
+-- of like this:
+  ( Name (..),
+    Salutation (..),
+    GreetingMessage (..),
+    defaultMessage,
+    formatMessage,
+    testMessage,
+  )
+where
 
 data Name = Name {getName :: String}
 
@@ -49,4 +81,4 @@ excitingMessage message =
 
 testMessage :: String
 testMessage =
-  formatMessage $ defaultMessage { greetingFrom = [Name "test example"] }
+  formatMessage $ defaultMessage {greetingFrom = [Name "test example"]}
