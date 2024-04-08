@@ -1,6 +1,8 @@
 {-# LANGUAGE RecordWildCards #-}
 
-module ModuleExamples.Module where
+-- during development use :load over import
+-- to have all declarations available
+module ModuleExamples.Module (testMessage) where
 
 data Name = Name {getName :: String}
 
@@ -44,3 +46,7 @@ formatMessage GreetingMessage {..} =
 excitingMessage :: String -> String
 excitingMessage message =
   "Exciting news: " <> message <> "!!!"
+
+testMessage :: String
+testMessage =
+  formatMessage $ defaultMessage { greetingFrom = [Name "test example"] }
