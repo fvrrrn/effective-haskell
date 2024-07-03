@@ -69,7 +69,7 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.2.1, text
+    build-depends:    base ^>=4.18.2.0, text
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -94,7 +94,7 @@ executable effective-haskell
 
     -- Other library packages from which modules are imported.
     build-depends:
-        base ^>=4.17.2.1,
+        base ^>=4.18.2.0,
         effective-haskell
 
     -- Directories containing source files.
@@ -127,5 +127,5 @@ test-suite effective-haskell-test
 
     -- Test dependencies.
     build-depends:
-        base ^>=4.17.2.1,
+        base ^>=4.18.2.0,
         effective-haskell
